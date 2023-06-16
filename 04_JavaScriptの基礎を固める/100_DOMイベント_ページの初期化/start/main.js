@@ -9,6 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 // document.は使えない
-window.addEventListener('load', function () {
-  load.classList.add('done')
-})
+// window.addEventListener('load', function () {
+//   load.classList.add('done')
+// })
