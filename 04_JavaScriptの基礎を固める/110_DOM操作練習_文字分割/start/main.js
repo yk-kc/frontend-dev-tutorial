@@ -1,11 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
   const el = document.querySelector('.animate-title')
-  const str = el.innerHTML.trim()
-  let concatStr = ''
+  const str = el.innerHTML.trim().split('')
 
-  for (let c of str) {
-    concatStr = concatStr + `<span class="char">${c}</span> `
-  }
-  el.innerHTML = concatStr
-  console.log(concatStr)
+  // let concatStr = ''
+
+  // for (let c of str) {
+  //   c = c.replace(' ', '&nbsp;')
+  //   concatStr = concatStr + `<span class="char">${c}</span> `
+  // }
+
+  // reduceメソッドに書き換え
+  el.innerHTML = str.reduce((acc, curr) => {
+    curr = curr.replace(' ', '&nbsp;')
+    return `${acc}<span class="char">${curr}</span>`
+  }, '')
 })
